@@ -1,6 +1,7 @@
+import discord
 from discord.ext import commands
 
-
+eolas = discord.client()
 description = '''There are a number of utility commands being showcased here.'''
 eolas = commands.Bot(command_prefix='?', description=description)
 
