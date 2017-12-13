@@ -1,4 +1,4 @@
-discord.py[voice]==0.16.12
+discord.py==0.16.12
 websockets==3.4
 beautifulsoup4==4.5.3
 pyowm==2.7.1
