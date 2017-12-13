@@ -30,7 +30,7 @@ def main():
             exc = '{}: {}'.format(type(e).__name__, e)
             print('Failed to load extension {}\n{}'.format(extension, exc))
 
-    eolas.run(token, bot=False)
+    eolas.run(token)
 
 
 if __name__ == '__main__':
