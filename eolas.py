@@ -1,8 +1,7 @@
-import discord
 from discord.ext import commands
 
+
 description = '''There are a number of utility commands being showcased here.'''
-eolas_bot = discord.Client()
 eolas = commands.Bot(command_prefix='?', description=description)
 
 token = 'YOUR_BOT_TOKEN'
@@ -16,19 +15,23 @@ extensions = (
 )
 
 
-@eolas_bot.event
-async def on_ready():
-    print('Logged in as')
-    print(eolas.user.name)
-    print(eolas.user.id)
-    print('------')
+def main():
+    @eolas.event
+    async def on_ready():
+        print('Logged in as')
+        print(eolas.user.name)
+        print(eolas.user.id)
+        print('------')
 
-for extension in extensions:
-    try:
-        eolas_bot.load_extension(extension)
-    except Exception as e:
-        exc = '{}: {}'.format(type(e).__name__, e)
-        print('Failed to load extension {}\n{}'.format(extension, exc))
+    for extension in extensions:
+        try:
+            eolas.load_extension(extension)
+        except Exception as e:
+            exc = '{}: {}'.format(type(e).__name__, e)
+            print('Failed to load extension {}\n{}'.format(extension, exc))
 
-eolas_bot.run(token)
+    eolas.run(token)
 
+
+if __name__ == '__main__':
+    main()
