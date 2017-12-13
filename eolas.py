@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 description = '''There are a number of utility commands being showcased here.'''
-eolas = discord.Client()
+eolas_bot = discord.Client()
 eolas = commands.Bot(command_prefix='?', description=description)
 
 token = 'YOUR_BOT_TOKEN'
@@ -16,7 +16,7 @@ extensions = (
 )
 
 
-@eolas.event
+@eolas_bot.event
 async def on_ready():
     print('Logged in as')
     print(eolas.user.name)
@@ -30,5 +30,5 @@ for extension in extensions:
         exc = '{}: {}'.format(type(e).__name__, e)
         print('Failed to load extension {}\n{}'.format(extension, exc))
 
-eolas.run(token)
+eolas_bot.run(token)
 
