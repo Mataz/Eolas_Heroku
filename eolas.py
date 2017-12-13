@@ -25,7 +25,7 @@ async def on_ready():
 
 for extension in extensions:
     try:
-        eolas.load_extension(extension)
+        eolas_bot.load_extension(extension)
     except Exception as e:
         exc = '{}: {}'.format(type(e).__name__, e)
         print('Failed to load extension {}\n{}'.format(extension, exc))
